@@ -1,0 +1,181 @@
+---
+import GitHub from "./icons/iconsSocial/GitHub.astro";
+import NextJS from "./icons/iconsProgramm/NextJS.astro";
+import Html from "./icons/iconsProgramm/Html.astro";
+import Tailwind from "./icons/iconsProgramm/Tailwind.astro";
+import JavaScript from "./icons/iconsProgramm/JavaScript.astro";
+import Css from "./icons/iconsProgramm/Css.astro";
+import React from "./icons/iconsProgramm/React.astro";
+import Mysql from "./icons/iconsProgramm/Mysql.astro";
+import Sql from "./icons/iconsProgramm/Sql.astro";
+
+import PhotoShop from "./icons/iconsTools/PhotoShop.astro";
+import VisualStudio from "./icons/iconsTools/VisualStudio.astro";
+import VisualStudioCode from "./icons/iconsTools/VisualStudioCode.astro";
+import Canva from "./icons/iconsTools/Canva.astro";
+import Postman from "./icons/iconsTools/Postman.astro";
+import Xampp from "./icons/iconsTools/Xampp.astro";
+import PowerShell from "./icons/iconsTools/PowerShell.astro";
+---
+<div class="contenido">    
+    <div class="scroll" style="--time:20s">
+        <div>
+            <span>Html5</span>
+            <span>Css</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Next</span>
+            <span>Astro</span>
+            
+            
+        </div>
+        <div>
+            <span>Photoshop</span>
+            <span>Adobe Illustrator</span>
+            <span>Visual Studio 17</span>
+            <span>Visual Studio 19</span>
+            <span>Visual Studio Code</span>
+            <span>Canva</span>
+            <span>Postman</span>
+            <span>Xampp</span>
+            <span>Power Shell</span>
+        </div>
+    </div>
+    <div class="scroll" style="--time:30s">
+        <div>
+            <span>Githut</span>
+            <span>Git</span>
+            <span>C#</span>
+            <span>Node</span>
+            <span>Sql</span>            
+        </div>
+        <div>
+            <span>Photoshop</span>
+            <span>Adobe Ilustrate</span>
+            <span>Visual Studio 17</span>
+            <span>Visual Studio 19</span>
+            <span>Canva</span>
+            <span>Postman</span>
+            <span>Xampp</span>
+            <span>Power Shell</span>
+        </div>
+    </div>
+    <div class="scroll" style="--time:40s">
+        <div>
+            <span>MongoDB</span>
+            <span>Tailwindcss</span>
+            <span>Bootstrap5</span>
+            <span>Sass</span>           
+        </div>
+        <div>
+            <span>Photoshop</span>
+            <span>Adobe Ilustrate</span>
+            <span>Visual Studio 17</span>
+            <span>Visual Studio 19</span>
+            <span>Canva</span>
+            <span>Postman</span>
+            <span>Xampp</span>
+            <span>Power Shell</span>
+        </div>
+    </div>
+
+    <div class="scroll" style="--time:10s">
+        <div>
+            <span><Html class="size-20" /></span>
+            <span><Css class="size-20" /></span>        
+            <span><JavaScript class="size-20" /></span>
+            <span><Tailwind class="size-20" /></span>
+            <span><Sql class="size-20" /></span>
+            <span><Mysql class="size-20" /></span>
+            <span><React class="size-20" /></span>
+            <span><NextJS class="size-20" /></span>
+            <span><GitHub class="size-20" /></span>
+        </div>        
+    </div>
+    <div class="scroll imgBox" style="--time:10s">
+        <div>
+            <span><PhotoShop class="size-20" /></span>
+            <span><VisualStudio class="size-20" /></span>        
+            <span><VisualStudioCode class="size-20" /></span>
+            <span><Canva class="size-20" /></span>
+            <span><Postman class="size-20" /></span>
+            <span><Xampp class="size-20" /></span>
+            <span><PowerShell class="size-20" /></span>
+        </div>
+    </div>
+</div>
+
+<style>
+    .contenido {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: auto;
+        /* background: #fff; */
+        flex-direction: column;
+    }
+
+    .scroll {
+        position: relative;
+        display: flex;
+        width: 700px;
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+    }
+
+    .scroll div {
+        white-space: nowrap;
+        animation: scroll var(--time) linear infinite;
+        animation-delay: calc(var(--time)*-1)
+    }
+
+    .scroll div:nth-child(2) {
+        animation: scroll2 var(--time) linear infinite;
+        animation-delay: calc(var(--time)/-2);
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(100);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+     @keyframes scroll2 {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-200%);
+        }
+    }
+
+    .scroll div span {
+        display: inline-block;
+        margin: 10px;
+        letter-spacing: 0.2em;
+        background: #333;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 8px;
+        transition: 0.5s;
+    }
+
+    .scroll div span:hover {
+        background: #3fd2f9;
+        cursor: pointer;
+    }
+
+    .imgBox div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imgBox {
+        scale: 0.8;
+    }
+</style>

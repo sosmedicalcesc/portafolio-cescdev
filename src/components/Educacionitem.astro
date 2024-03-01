@@ -1,0 +1,63 @@
+---
+import LinkInline from "./LinkInline.astro";
+import Education from "./icons/Education.astro";
+
+interface Props {
+  title: string;
+  company: string;
+  description: string;
+  link?: string;
+  date: string;
+}
+
+const { title, company, description, link, date } = Astro.props;
+---
+
+<div
+  class="relative mx-12 pb-6 flex flex-col before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 dark:before:border-white/15 before:border-black/15 before:content-[''] md:space-x-4] hover:scale-110 transition duration-300"
+>
+  <div class="relative bg-slate-800/25 p-4 rounded-t-xl">
+    <div class="sticky top-0">
+      <div class="dark:bg-yellow-400 bg-sky-600 -left-[46px] h-6 w-6 flex items-center justify-center rounded-full absolute text-5xl size-4">
+        <Education class="size-4 dark:fill-black fill-slate-300" />
+      </div>
+
+      <h3 class="text-xl font-bold dark:text-yellow-400 text-sky-600">{title}</h3>
+      <h4 class="font-semibold text-xl text-gray-600 dark:text-white">
+        {company}
+      </h4>
+      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80"
+        >{date}</time
+      >
+    </div>
+  </div>
+  <div
+    class="relative flex flex-col gap-2 rounded-b-xl text-gray-600 dark:text-gray-300 bg-slate-800/25 p-4"
+  >
+    {description}
+    {
+      link && (
+        <LinkInline href={link}>
+          Saber más{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 icon icon-tabler icon-tabler-chevron-right"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <>
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 6l6 6l-6 6" />
+            </>
+          </svg>
+        </LinkInline>
+      )
+    }
+  </div>
+</div>

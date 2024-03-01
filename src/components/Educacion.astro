@@ -1,0 +1,37 @@
+---
+import Educacionitem from "./Educacionitem.astro";
+
+const EDUCACION = [
+  {
+    date: "Febrero 2017 - Diciembre 2021",
+    title: "Ingenieria en Sistema",
+    company: "UNAN-LEON",
+    description:
+      "Universidad Nacional Autónoma de Nicaragua, León."
+  },
+  {
+    date: "Febrero 2022 - Abril 2022",
+    title: "Aplicaciones Desktop con Microsoft .Net y DeExpress",
+    company: "UNAN-LEON",
+    description:
+      "Impartido del 13 de febrero al 24 de abril del año 2022 con una duración de 40 horas presenciales. Dado en la ciudad de León, Nicaragua.",
+  },  
+  {
+    date: "Octubre 2019 - Diciembre 2019",
+    title: "Diseño y Administración de base de datos con Sql Server",
+    company: "UNAN-LEON",
+    description:
+      "Impartido del 06 de octubre al 01 de diciembre del año 2019 con una duración de 40 horas presenciales. Dado en la ciudad de León, Nicaragua.",
+  }
+];
+---
+
+<ol class="relative mt-8">
+  {
+    EDUCACION.map((educacion) => (
+      <li class="">
+        <Educacionitem {...educacion} />
+      </li>
+    ))
+  }
+</ol>

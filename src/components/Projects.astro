@@ -1,0 +1,244 @@
+---
+import GitHub from "./icons/iconsSocial/GitHub.astro";
+import NextJS from "./icons/iconsProgramm/NextJS.astro";
+import Html from "./icons/iconsProgramm/Html.astro";
+import Tailwind from "./icons/iconsProgramm/Tailwind.astro";
+import JavaScript from "./icons/iconsProgramm/JavaScript.astro";
+import Css from "./icons/iconsProgramm/Css.astro";
+import React from "./icons/iconsProgramm/React.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import Mysql from "./icons/iconsProgramm/Mysql.astro";
+import Sql from "./icons/iconsProgramm/Sql.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black dark:text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159]/80 dark:text-white text-black",
+    icon: Tailwind,
+  },
+  REACT: {
+    name: "React.js",
+    class: "dark:bg-[#61DBFB]/35 bg-[#457b9d]/80 dark:text-white text-black",
+    icon: React,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#070739] dark:text-white text-black",
+  },
+  HTML5: {
+    name: "Html5",
+    class: "bg-[#dc2f02]/35 dark:text-white text-black",
+    icon: Html,
+  },
+  CSS: {
+    name: "Css",
+    class: "bg-[#168aad]/35 dark:text-white text-black",
+    icon: Css,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#ffca3a]/35 dark:text-white text-black",
+    icon: JavaScript,
+  },
+  MYSQL: {
+    name: "MySql",
+    class: "bg-[#0d3b66]/35 dark:text-white text-black",
+    icon: Mysql,
+  },
+  SQL: {
+    name: "Sql",
+    class: "bg-[#a71e34]/35 dark:text-white text-black",
+    icon: Sql,
+  },
+  NODE: {
+    name: "Node",
+    class: "bg-[#80b918]/35 text-black",
+  },
+};
+const PROJECTS = [
+  {
+    title: "Distrifull",
+    description: "Página web estatica Distrifull",
+    link: "https://www.distrifull.com",
+    github: "",
+    image: "https://i.ibb.co/GPTj1sw/distrifull.png",
+    tags: [TAGS.HTML5, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Bienes raíces",
+    description: "Página web estatica Arquitectura del bosque",
+    link: "https://arquitectura-bosque-ecomer.netlify.app/",
+    github: "",
+    image: "https://i.ibb.co/gSXN5Kz/arquitectura-bosque.png",
+    tags: [TAGS.HTML5, TAGS.CSS],
+  },
+  {
+    title: "Tienda de Muebles",
+    description: "Página web estatica Tienda de Muebles",
+    link: "https://ecomer-tienda-muebles.netlify.app/",
+    github: "",
+    image: "https://i.ibb.co/wN8VFmn/tienda-muebles.png",
+    tags: [TAGS.HTML5, TAGS.CSS],
+  },
+  {
+    title: "Buscador de imagenes",
+    description: "Buscador de imagenes en pixabay, consumo de Api",
+    link: "https://buscador-image-api.netlify.app/",
+    github: "https://github.com/GitCesc07/-Busqueda-Imagen-API",
+    image: "https://i.ibb.co/XZJCkLq/buscador-imagen.png",
+    tags: [TAGS.HTML5, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Buscador de clima",
+    description: "Buscador de clima, consumo de Api",
+    link: "https://the-clima.netlify.app/",
+    github: "https://github.com/GitCesc07/Proyecto-Clima-Ciudades",
+    image: "https://i.ibb.co/hytXQgR/clima.png",
+    tags: [TAGS.HTML5, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Buscador de recetas de comidas",
+    description: "Buscador de recetas de comidas, consumo de Api",
+    link: "https://recetas-comida.netlify.app/",
+    github: "https://github.com/GitCesc07/Buscador-Recetas-API",
+    image: "https://i.ibb.co/MVRpVmr/recetas.png",
+    tags: [TAGS.HTML5, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Cotizador de Criptos Monedas",
+    description: "Cotizador de Criptos Monedas",
+    link: "https://cotizad-criptomoneda.netlify.app/",
+    github: "https://github.com/GitCesc07/criptomonedas-react-api",
+    image: "https://i.ibb.co/LhvYZ11/cotizador-react.png",
+    tags: [TAGS.REACT, TAGS.CSS],
+    clone: "",
+    nameClone: "",
+  },
+  {
+    title: "Planificador de gastos",
+    description: "Planificador de gasto",
+    link: "https://react-control-gasto.netlify.app/",
+    github: "https://github.com/GitCesc07/control-gastos-react",
+    image: "https://i.ibb.co/VBFzxXG/planificador-react.png",
+    tags: [TAGS.REACT, TAGS.CSS],
+    clone: "",
+    nameClone: "",
+  },
+  {
+    title: "Gestión de pacientes de veterinarias",
+    description: "Gestión de animales que visitan Veterinaria",
+    link: "https://cita-veterinaria-react.netlify.app/",
+    github: "https://github.com/GitCesc07/citas-react",
+    image: "https://i.ibb.co/pJXD5FP/veterinaria-react.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
+    clone: "",
+    nameClone: "",
+  },
+  {
+    title: "Filtrador de usuario",
+    description:
+      "Busqueda de perfiles random de una api, proyecto inspirado en Irina Delgado",
+    link: "https://main--users-filters.netlify.app/",
+    github: "https://github.com/GitCesc07/filter_user_api",
+    image: "https://i.ibb.co/Y3LsccD/filter-user.png",
+    tags: [TAGS.HTML5, TAGS.CSS, TAGS.JAVASCRIPT],
+    clone:
+      "https://www.irinadelgado.com/filtro-de-usuario-usando-la-api-de-random-user-generator/",
+    nameClone: "Irina Delgado",
+  },
+  {
+    title: "Buscador de perfil en Github",
+    description:
+      "Busqueda de perfiles de Github, proyecto inspirado en Frontend Mentor",
+    link: "https://main--detalle-targeta.netlify.app/",
+    github: "https://github.com/GitCesc07/card_details_form",
+    image: "https://i.ibb.co/StJXGws/targeta-detalle.png",
+    tags: [TAGS.HTML5, TAGS.CSS, TAGS.JAVASCRIPT],
+    clone:
+      "https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw",
+    nameClone: "Fontend Mentor",
+  },
+  {
+    title: "Buscador de perfil en Github",
+    description:
+      "Busqueda de perfiles de Github, proyecto inspirado en Frontend Mentor",
+    link: "https://main--react-search-github-ususario.netlify.app/",
+    github: "https://github.com/GitCesc07/user-github-react",
+    image: "https://i.ibb.co/Yyq0t2j/github-search.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
+    clone:
+      "https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6",
+    nameClone: "Fontend Mentor",
+  },
+];
+---
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4">
+  {
+    PROJECTS.map(
+      ({ image, title, description, tags, link, github, clone, nameClone }) => (
+        <article class="flex bg-slate-300/35 dark:bg-slate-700/35 p-4 rounded-lg flex-col group items-center shadow-2xl hover:scale-105 transition duration-300">
+          <div class="w-full">
+            <div class="relative flex flex-col items-center gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-t-lg md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <img
+                alt="Recién llegado vs 5 años en Nueva Zelanda"
+                class="object-cover object-top h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col items-start justify-center">
+            <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mt-4">
+              {title}
+            </h3>
+            <div class="flex flex-wrap mt-4">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="text-gray-700 dark:text-gray-400 mt-4">
+              {description}
+            </div>
+            <div class="flex flex-col items-center mt-4 gap-4 w-full">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-6" />
+                  Preview
+                </LinkButton>
+              )}
+              {clone && (
+                <LinkButton href={clone}>
+                  <Link class="size-6" />
+                  {nameClone}
+                </LinkButton>
+              )}
+            </div>
+          </div>
+        </article>
+      )
+    )
+  }
+</div>

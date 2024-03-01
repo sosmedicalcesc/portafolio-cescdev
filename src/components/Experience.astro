@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Enero 2024",
+    title: "Creación de Página web",
+    company: "Distrifull",
+    description:
+      "Creación de Página web, para una empresa importadora y comercializadora de productos.",
+    link: "http://www.distrifull.com",
+  },
+  {
+    date: "Octubre 2023",
+    title: "Sistema de Farmacia",
+    company: "Sos medical",
+    description:
+      "Creación de un software de escritorio para farmacia, control de inventario, ventas, compras etc...",
+  },
+]
+---
+
+<ol class="relative mt-8">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

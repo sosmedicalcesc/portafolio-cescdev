@@ -1,0 +1,172 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import AboutMe from "../components/AboutMe.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Experience from "../components/Experience.astro";
+import Educacion from "../components/Educacion.astro";
+import ProfileCheck from "../components/icons/ProfileCheck.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Hero from "../components/Hero.astro";
+import Education from "../components/icons/Education.astro";
+import LenguajeProgramacion from "../components/LenguajeProgramacion.astro";
+---
+
+<Layout
+  title="Portafolio - CescDev"
+  description="Programador de Software y Desarrollador web"
+>
+  <main class="px-4">
+    <SectionContainer class="py-32 md:py-36">
+      <Hero />
+      <LenguajeProgramacion />
+    </SectionContainer>
+  </main>
+  <div class="space-y-14 max-sm:p-4">
+    <SectionContainer
+      id="experiencia"
+      class="flex md:flex-row flex-col items-start gap-4 justify-center"
+    >
+      <div>
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        >
+          <Briefcase class="size-8" />
+          Experiencia laboral
+        </h2>
+        <Experience />
+      </div>
+
+      <div>
+        <h2
+          class="flex items-center text-3xl font-semibold gap-x-3 text-black/80 dark:text-white mb-6"
+        >
+          <Education class="size-8 dark:fill-white fill-black/80" />
+          Educación - Cursos
+        </h2>
+        <Educacion />
+      </div>
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <div class="w-full mx-auto container lg:max-w-4xl md:max-w-2x max-sm:p-4">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        >
+          <CodeIcon class="size-8" />
+          Proyectos
+        </h2>
+        <Projects />
+      </div>
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+      >
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </h2>
+      <AboutMe />
+    </SectionContainer>
+  </div>
+
+  <div class="btn-float">
+    <div class="go_top_container">
+      <a
+        id="button-subir"
+        class="go_top_button stroke-slate-500/85 dark:stroke-slate-800"
+        href="/#experiencia"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon_subir"
+          class="icon icon-tabler icon-tabler-circle-arrow-up"
+          width="44"
+          height="44"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+          <path d="M12 8l-4 4"></path>
+          <path d="M12 8v8"></path>
+          <path d="M16 12l-4 -4"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .go_top_container {
+    position: fixed;
+    bottom: 2rem;
+    right: 0rem;
+    width: 3rem;
+    height: 3rem;
+    z-index: -1;
+  }
+
+  .go_top_button {
+    width: 0rem;
+    height: 0rem;
+    border-radius: 50%;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border: 0;
+    opacity: 0;
+  }
+
+  .go_top_button .icon_subir {
+    position: absolute;
+    top: 48%;
+    left: 14%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.3s;
+  }
+
+  .show {
+    z-index: 10;
+  }
+
+  .show .go_top_button {
+    animation: popup 0.3s ease-in-out;
+    width: 5rem;
+    height: 5rem;
+    z-index: 11;
+    opacity: 1;
+  }
+
+  .show .icon_subir {
+    transform: translate(-50%, -50%) scale(1);
+  }
+</style>
+
+<script>
+  const button_subir = document.querySelector(".go_top_container"),
+    buttonSubir = document.querySelector("#button-subir");
+
+  window.onscroll = function () {
+    if (document.documentElement.scrollTop > 50) {
+      button_subir.classList.add("show");
+    } else {
+      button_subir.classList.remove("show");
+    }
+  };
+
+  buttonSubir.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>

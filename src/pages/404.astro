@@ -1,0 +1,211 @@
+---
+
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Página no encontrada de CescDev" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="shortcut icon"
+      href="/img/Logo-CescDev-ligth.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="shortcut icon"
+      href="/img/Logo-CescDev-dark.ico"
+      type="image/x-icon"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Pagina 404 - CescDev</title>
+  </head>
+
+  <body class="relative text-black dark:text-white">
+    <div
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-500 dark:bg-gray-950
+      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
+      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+
+    <div
+      class="flex lg:flex-row flex-col-reverse min-h-screen items-center justify-center container mx-auto px-16 py-16 lg:py-0 lg:text-left text-center"
+    >
+      <div class="flex flex-col text-gray-800 dark:text-gray-200">
+        <h1 class="lg:text-[150px] text-[75px]">404</h1>
+        <h2 class="marginy-4 lg:text-[60px] text-[30px]">Oooops...</h2>
+        <h2 class="marginy-4 lg:text-[30px] text-xl">Página no encontrada...</h2>
+        <p class="marginy-4 text-xl">La página que estas buscando no existe.</p>
+        <a class="mt-4 py-2 px-4 bg-sky-500 text-center hover:text-white text-gray-900 hover:bg-sky-900 font-bold uppercase rounded-full transition duration-300" href="/">Ir a Inicio</a>
+      </div>
+      <div>
+        <img
+          class="image lg:max-w-lg w-full drop-shadow-2xl"
+          src="./public/img/404-Error-amico.png"
+          alt="Image-404"
+        />
+      </div>
+    </div>
+
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+
+      html {
+        font-family: "Onest Variable", system-ui, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: rgba(17, 17, 17, 0.9);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overscroll-behavior: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+
+      #header-nav {
+        animation: blur linear both 0.5s;
+        animation-timeline: scroll();
+        animation-range: 0 500px;
+      }
+
+      @keyframes blur {
+        to {
+          backdrop-filter: blur(20px);
+          border-width: 1px;
+          border-color: rgba(0, 0, 0);
+          padding: 0.25rem 0.75rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          background-color: rgb(229, 229, 229);
+          border-radius: 9999px;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        @keyframes blur {
+          from {
+            border: 0px;
+          }
+          to {
+            box-shadow:
+              0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+              0px 0px 0 1px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border-width: 1px;
+            border-color: rgba(0, 0, 0);
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 9999px;
+          }
+        }
+      }
+
+      @keyframes float {
+        0% {
+          /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+          transform: translatey(0px);
+        }
+
+        50% {
+          
+          transform: translatey(-20px);
+        }
+
+        100% {
+          /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+          transform: translatey(0px);
+        }
+      }
+
+      .image {
+        box-sizing: border-box;
+        overflow: hidden;
+        /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+        transform: translatey(0px);
+        animation: float 6s ease-in-out infinite;
+      }
+    </style>
+  </body>
+</html>
+
+<script is:inline>
+  let remove = null
+  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
+  const themesMenu = document.getElementById("themes-menu")
+
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined") {
+      return localStorage.getItem("theme") ?? "system"
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light"
+  }
+
+  const updateIcon = (themePreference) => {
+    document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
+      element.style.scale = element.id === themePreference ? "1" : "0"
+    })
+  }
+
+  const updateTheme = () => {
+    if (remove != null) {
+      remove()
+    }
+    matchMedia.addEventListener("change", updateTheme)
+    remove = () => {
+      matchMedia.removeEventListener("change", updateTheme)
+    }
+
+    const themePreference = getThemePreference()
+    const isDark =
+      themePreference === "dark" ||
+      (themePreference === "system" && matchMedia.matches)
+
+    updateIcon(themePreference)
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+  }
+
+  updateTheme()
+
+  document.addEventListener("click", () => themesMenu.classList.remove("open"))
+
+  document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
+    e.stopPropagation()
+    const isClosed = !themesMenu.classList.contains("open")
+    themesMenu.classList[isClosed ? "add" : "remove"]("open")
+  })
+
+  document.querySelectorAll(".themes-menu-option").forEach((element) => {
+    element.addEventListener("click", (e) => {
+      localStorage.setItem("theme", e.target.innerText.toLowerCase().trim())
+      updateTheme()
+    })
+  })
+</script>

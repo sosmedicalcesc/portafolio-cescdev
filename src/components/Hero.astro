@@ -1,0 +1,86 @@
+---
+const personalImageAlt = "Miguel Ángel"
+import Badge from "../components/Badge.astro"
+import Facebook from "./icons/iconsSocial/Facebook.astro"
+import LinkedInIcon from "../components/icons/iconsSocial/LinkedIn.astro"
+import GitHub from "./icons/iconsSocial/GitHub.astro"
+import Twitter from "./icons/iconsSocial/Twitter.astro"
+import Instagram from "./icons/iconsSocial/Instagram.astro"
+import WhatssAp from "./icons/iconsSocial/WhatssAp.astro"
+import SocialPill from "../components/SocialPill.astro"
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="/img/Foto-Edit-1.png"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://www.linkedin.com/in/c%C3%A9sar-urroz-0289aa240"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hey, soy César Urroz
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-sky-700 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    +2 años de experiencia.
+    <strong> Ingeniero en Sistema</strong>
+    <div id="typed-strings">
+        <p>Soy <strong class="dark:text-yellow-200 text-sky-700 font-semibold">Desarrollador de Software</strong></p>
+        <p>Soy <strong class="dark:text-yellow-200 text-sky-700 font-semibold">Desarrollador Web</strong></p>
+        <p>Yo <em class="text-sky-900/65 dark:text-yellow-400">trabajo </em><strong class="dark:text-yellow-200 text-sky-700 font-semibold">
+          con React, Next.js, Astro, Node.js, C#...
+        </strong></p>
+      </div>
+      
+      <div class="text-start mt-6"><span id="typed"></span></div>
+  </p>      
+
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="https://www.linkedin.com/in/c%C3%A9sar-urroz-0289aa240">
+      <LinkedInIcon class="size-4 dark:fill-white fill-slate-700" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://www.facebook.com/cesaraugusto.urrozrenteria?mibextid=ZbWKwL">
+      <Facebook class="size-4 dark:fill-white fill-slate-700" />    
+      Facebook  
+    </SocialPill>    
+    <SocialPill href="https://github.com/GitCesc07">
+      <GitHub class="size-4" />    
+      Github
+    </SocialPill>  
+    <SocialPill href="https://twitter.com/CescFabregas041?t=S8De1vlzbnkCD4bgHTL_oQ&s=09">
+      <Twitter class="size-4 dark:fill-white fill-slate-700" />    
+      Twitter
+    </SocialPill> 
+    <SocialPill href="https://twitter.com/CescFabregas041?t=S8De1vlzbnkCD4bgHTL_oQ&s=09">
+      <Instagram class="size-4 dark:fill-white fill-slate-700" />    
+      Instagram
+    </SocialPill> 
+    <SocialPill href="https://api.whatsapp.com/send?phone=50575437011&text=%C2%A1Hola!">
+      <WhatssAp class="size-4 dark:fill-white fill-slate-700" />    
+      WhatsApp
+    </SocialPill> 
+  </nav>
+</div>
+
+<script>
+  import Typed from "typed.js";
+
+  var typed = new Typed("#typed", {
+    stringsElement: "#typed-strings",
+    typeSpeed: 50,
+    loop: true,
+  });
+</script>
